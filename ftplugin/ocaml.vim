@@ -25,7 +25,7 @@ def run_tmux_ocaml_chunk():
   # Move cursor to the end of the selection
   vim.current.window.cursor=(r.end+1, 0)
 
-def run_tmux_ocaml_cell(restore_cursor=False):
+def run_tmux_ocaml_cell():
   """
   Tries to find the ocaml top level expression that's currently under the
   cursor. It uses the following heuristic:
@@ -52,5 +52,4 @@ endpython
 
 " Key Mappings
 vmap <silent> <C-c> :python run_tmux_ocaml_chunk()<CR>
-noremap <silent> <C-b> :python run_tmux_ocaml_cell(False)<CR>
-noremap <silent> <C-g> :python run_tmux_ocaml_cell(True)<CR>
+noremap <silent> <C-g> :python run_tmux_ocaml_cell()<CR>
